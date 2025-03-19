@@ -1,0 +1,5 @@
+INSERT INTO categoria (codigo, descricao, data_de_inclusao, data_de_alteracao) VALUES (1, 'Bebidas', PARSEDATETIME('2024-09-02-00.00.00','yyyy-MM-dd-HH.mm.ss'), NULL);
+INSERT INTO categoria (codigo, descricao, data_de_inclusao, data_de_alteracao) VALUES (2, 'Carnes', PARSEDATETIME('2024-09-02-00.00.00','yyyy-MM-dd-HH.mm.ss'), NULL);
+INSERT INTO categoria (codigo, descricao, data_de_inclusao, data_de_alteracao) VALUES (3, 'Cereais', PARSEDATETIME('2024-09-02-00.00.00','yyyy-MM-dd-HH.mm.ss'), NULL);
+INSERT INTO categoria (codigo, descricao, data_de_inclusao, data_de_alteracao) VALUES (4, 'Hortifruti', PARSEDATETIME('2024-09-02-00.00.00','yyyy-MM-dd-HH.mm.ss'), NULL);
+INSERT INTO categoria (codigo, descricao, data_de_inclusao, data_de_alteracao) VALUES (5, 'Padaria', PARSEDATETIME('2024-09-02-00.00.00','yyyy-MM-dd-HH.mm.ss'), NULL);
