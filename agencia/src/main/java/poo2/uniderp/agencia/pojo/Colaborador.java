@@ -1,9 +1,22 @@
 package poo2.uniderp.agencia.pojo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "colaborador")
 public class Colaborador {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codigo;
+
     private String nome;
+
     private String cpf;
+    
     public Long getCodigo() {
         return codigo;
     }

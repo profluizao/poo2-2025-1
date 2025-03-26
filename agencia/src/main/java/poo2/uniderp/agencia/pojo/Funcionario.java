@@ -2,11 +2,26 @@ package poo2.uniderp.agencia.pojo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "funcionario")
 public class Funcionario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codigo;
+
     private String nome;
+
     private String matricula;
+
     private LocalDate dataDeInsercao;
+    
     public Long getCodigo() {
         return codigo;
     }

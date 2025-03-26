@@ -29,7 +29,4 @@ public class FuncionarioController {
         Funcionario temp = this.fakeDB.obterPorId(codigo);
         return temp;
     }
-
- 
-
 }
