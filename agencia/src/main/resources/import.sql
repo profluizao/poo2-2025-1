@@ -3,3 +3,31 @@ INSERT INTO categoria (codigo, descricao, data_de_inclusao, data_de_alteracao) V
 INSERT INTO categoria (codigo, descricao, data_de_inclusao, data_de_alteracao) VALUES (3, 'Cereais', PARSEDATETIME('2024-09-02-00.00.00','yyyy-MM-dd-HH.mm.ss'), NULL);
 INSERT INTO categoria (codigo, descricao, data_de_inclusao, data_de_alteracao) VALUES (4, 'Hortifruti', PARSEDATETIME('2024-09-02-00.00.00','yyyy-MM-dd-HH.mm.ss'), NULL);
 INSERT INTO categoria (codigo, descricao, data_de_inclusao, data_de_alteracao) VALUES (5, 'Padaria', PARSEDATETIME('2024-09-02-00.00.00','yyyy-MM-dd-HH.mm.ss'), NULL);
+
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(1, 'Simão Pedro', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(2, 'André', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(3, 'Tiago de Zebedeu', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(4, 'João de Zebedeu', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(5, 'Filipe', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(6, 'Bartolomeu', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(7, 'Tomé', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(8, 'Mateus', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(9, 'Tiago de Alfeu', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(10, 'Judas Tadeu', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(11, 'Judas Tadeu', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(12, 'Simão Zelote', '123456789');
+INSERT INTO colaborador (codigo, nome, cpf) VALUES(13, 'Judas Iscariotes', '123456789');
+
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (1, 'Simão Pedro', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (2, 'André', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (3, 'Tiago de Zebedeu', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (4, 'João de Zebedeu', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (5, 'Filipe', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (6, 'Bartolomeu', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (7, 'Tomé', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (8, 'Mateus', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (9, 'Tiago de Alfeu', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (10, 'Judas Tadeu', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (11, 'Simão Zelote', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (12, 'Judas Iscariotes', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));
+INSERT INTO funcionario (codigo, nome, matricula, data_de_insercao) VALUES (13, 'José de Arimatéia', 'ABC123', PARSEDATETIME('2025-04-01-00.00.00','yyyy-MM-dd-HH.mm.ss'));

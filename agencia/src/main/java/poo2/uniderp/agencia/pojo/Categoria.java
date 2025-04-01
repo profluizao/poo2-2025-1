@@ -14,8 +14,11 @@ public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codigo;
+
     private String descricao;
+
     private LocalDate dataDeInclusao;
+
     private LocalDate dataDeAlteracao;
     public Long getCodigo() {
         return codigo;
