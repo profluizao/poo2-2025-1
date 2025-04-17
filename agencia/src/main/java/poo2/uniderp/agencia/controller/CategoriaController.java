@@ -3,6 +3,9 @@ package poo2.uniderp.agencia.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,8 +35,9 @@ public class CategoriaController {
     }
 
     @GetMapping("/{codigo}")
-    public Categoria obterPorId(@PathVariable Long codigo){
-        return this.servico.read(codigo);
+    public ResponseEntity<Categoria> obterPorId(@PathVariable Long codigo){
+        Categoria resposta = this.servico.read(codigo);
+        return new ResponseEntity<Categoria>(resposta, HttpStatus.OK);
     }
 
     @PostMapping
