@@ -1,6 +1,7 @@
 package poo2.uniderp.agencia.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,8 @@ public class CategoriaService implements IBaseService<Categoria> {
     }
 
     @Override
-    public Categoria read(Long chave) {
-        return this.repositorio.findById(chave).get();
+    public Optional<Categoria> read(Long chave) {
+        return this.repositorio.findById(chave);
     }
 
     @Override
@@ -40,8 +41,14 @@ public class CategoriaService implements IBaseService<Categoria> {
 
     @Override
     public Categoria delete(Long chave) {
-        Categoria deletado = this.read(chave);
-        this.repositorio.deleteById(chave);
-        return deletado;
+        Optional<Categoria> optDeletado= this.repositorio.findById(chave);
+        if (optDeletado.isPresent() == false){
+            return null;
+        }
+        else{
+            Categoria deletado = optDeletado.get();
+            this.repositorio.deleteById(chave);
+            return deletado;
+        }
     }
 }
