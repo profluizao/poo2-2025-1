@@ -51,4 +51,12 @@ public class CategoriaService implements IBaseService<Categoria> {
             return deletado;
         }
     }
+
+    @Override
+    public Optional<Categoria> delete(Categoria instancia) {
+        // TODO Auto-generated method stub
+        return Optional.empty();
+    }
+
+    
 }

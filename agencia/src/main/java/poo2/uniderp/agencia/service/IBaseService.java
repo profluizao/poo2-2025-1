@@ -14,4 +14,6 @@ public interface IBaseService<TPojo> {
     TPojo add(TPojo instancia);
 
     TPojo delete(Long chave);
+
+    Optional<TPojo> delete(TPojo instancia);
 }
