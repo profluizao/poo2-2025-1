@@ -1,9 +1,13 @@
 package poo2.uniderp.agencia.pojo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -37,9 +41,15 @@ public class Produto {
     }
 
     public Produto(){}
+
     public Produto(Long codigo, String nome, Double preco) {
         this.codigo = codigo;
         this.nome = nome;
         this.preco = preco;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_codigo")
+    @JsonBackReference
+    private Categoria categoria;
 }

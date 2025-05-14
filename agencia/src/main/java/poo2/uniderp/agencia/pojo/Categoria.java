@@ -1,11 +1,17 @@
 package poo2.uniderp.agencia.pojo;
 
 import java.time.LocalDate;
+import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -44,5 +50,13 @@ public class Categoria {
     public void setDataDeAlteracao(LocalDate dataDeAlteracao) {
         this.dataDeAlteracao = dataDeAlteracao;
     }
+
     public Categoria(){}
+
+    @OneToMany(mappedBy = "categoria", 
+        cascade = CascadeType.ALL, 
+        fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private Set<Produto> produtos;
+
 }
