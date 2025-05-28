@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Table(name = "colaborador")
 public class Colaborador {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
 
     private String nome;

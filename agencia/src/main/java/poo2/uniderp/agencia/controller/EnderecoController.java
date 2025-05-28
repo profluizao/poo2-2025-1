@@ -15,50 +15,50 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import poo2.uniderp.agencia.pojo.Funcionario;
-import poo2.uniderp.agencia.service.FuncionarioService;
+import poo2.uniderp.agencia.pojo.Endereco;
+import poo2.uniderp.agencia.service.EnderecoService;
 
 @RestController
-@RequestMapping("/api/agencia/recursoshumanos/funcionario")
-public class FuncionarioController {
+@RequestMapping("/api/agencia/recursoshumanos/endereco")
+public class EnderecoController {
     @Autowired
-    private FuncionarioService servico;
+    private EnderecoService servico;
 
-    public FuncionarioController(FuncionarioService srv){
+    public EnderecoController(EnderecoService srv){
         this.servico = srv;
     }
 
     @GetMapping
-    public ResponseEntity<List<Funcionario>> obterTodos(){
-        List<Funcionario> lista = this.servico.browse();
-        return new ResponseEntity<List<Funcionario>>(lista, HttpStatus.OK);
+    public ResponseEntity<List<Endereco>> obterTodos(){
+        List<Endereco> lista = this.servico.browse();
+        return new ResponseEntity<List<Endereco>>(lista, HttpStatus.OK);
     }
 
     @GetMapping("/{codigo}")
-    public ResponseEntity<Funcionario> obterPorId(@PathVariable Long codigo){
-        Optional<Funcionario> optResposta = this.servico.read(codigo);
+    public ResponseEntity<Endereco> obterPorId(@PathVariable Long codigo){
+        Optional<Endereco> optResposta = this.servico.read(codigo);
         if (optResposta.isPresent() == false){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         else{
-            Funcionario resposta = optResposta.get();
-            return new ResponseEntity<Funcionario>(resposta, HttpStatus.OK);
+            Endereco resposta = optResposta.get();
+            return new ResponseEntity<Endereco>(resposta, HttpStatus.OK);
         }
     }
 
     @PostMapping
-    public ResponseEntity<Funcionario> inserir(@RequestBody Funcionario instancia){
+    public ResponseEntity<Endereco> inserir(@RequestBody Endereco instancia){
         if (instancia == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         else{
-            Funcionario resposta =  this.servico.add(instancia);
-            return new ResponseEntity<Funcionario>(resposta, HttpStatus.CREATED);
+            Endereco resposta =  this.servico.add(instancia);
+            return new ResponseEntity<Endereco>(resposta, HttpStatus.CREATED);
         }
     }
 
     @PutMapping
-    public ResponseEntity<Funcionario> alterar(@RequestBody Funcionario instancia){
+    public ResponseEntity<Endereco> alterar(@RequestBody Endereco instancia){
         if (instancia == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -66,20 +66,19 @@ public class FuncionarioController {
             if (this.servico.read(instancia.getCodigo()) == null){
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
-            Funcionario resposta = this.servico.edit(instancia);
-            return new ResponseEntity<Funcionario>(resposta, HttpStatus.OK);
+            Endereco resposta = this.servico.edit(instancia);
+            return new ResponseEntity<Endereco>(resposta, HttpStatus.OK);
         }
     }
 
     @DeleteMapping("/{codigo}")
-    public ResponseEntity<Funcionario> apagar(@PathVariable Long codigo){
+    public ResponseEntity<Endereco> apagar(@PathVariable Long codigo){
         if (this.servico.read(codigo) == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         else{
-            Funcionario resposta = this.servico.delete(codigo);
-            return new ResponseEntity<Funcionario>(resposta, HttpStatus.OK);
+            Endereco resposta = this.servico.delete(codigo);
+            return new ResponseEntity<Endereco>(resposta, HttpStatus.OK);
         }
-    }
-
+    }    
 }

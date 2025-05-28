@@ -2,10 +2,13 @@ package poo2.uniderp.agencia.pojo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,7 +16,7 @@ import jakarta.persistence.Table;
 public class Funcionario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
 
     private String nome;
@@ -21,7 +24,7 @@ public class Funcionario {
     private String matricula;
 
     private LocalDate dataDeInsercao;
-    
+
     public Long getCodigo() {
         return codigo;
     }
@@ -46,12 +49,24 @@ public class Funcionario {
     public void setDataDeInsercao(LocalDate dataDeInsercao) {
         this.dataDeInsercao = dataDeInsercao;
     }
-    public Funcionario() {
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "endereco_codigo", referencedColumnName = "codigo")
+    private Endereco endereco;
+
+    public Endereco getEndereco() {
+        return endereco;
     }
-    public Funcionario(Long codigo, String nome, String matricula, LocalDate dataDeInsercao) {
-        this.codigo = codigo;
-        this.nome = nome;
-        this.matricula = matricula;
-        this.dataDeInsercao = dataDeInsercao;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
+
+    
 }
+
+// Explicação
+// @OneToOne(cascade = CascadeType.ALL) indica o relacionamento um para um e a propagação de operações
+// (ex: salvar/excluir) do Funcionario para o Endereco.
+//
+// @JoinColumn(name = "endereco_id", referencedColumnName = "codigo") cria a chave estrangeira na tabela 
+// Funcionario, apontando para o campo codigo da tabela Endereco.
